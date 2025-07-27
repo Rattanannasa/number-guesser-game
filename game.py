@@ -11,7 +11,8 @@ def get_player_guess():
     5. Add error handling for invalid input (e.g., text instead of a number).
     """
     # Student 1: Add your code here
-    return int(input("ทายเลข (1-100) : "))
+def get_player_guess():
+    return int(input("ทายเลข (1-100): "))
 
 def check_guess(secret_number, player_guess):
     """
