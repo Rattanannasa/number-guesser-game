@@ -12,7 +12,15 @@ def get_player_guess():
     """
     # Student 1: Add your code here
 def get_player_guess():
-    return int(input("ทายเลข (1-100): "))
+    while True:
+        try:
+            guess = int(input("ทายเลข (1-100): "))
+            if 1 <= guess <= 100:
+                return guess
+            else:
+                print("กรุณาใส่ตัวเลขระหว่าง 1 ถึง 100")
+        except ValueError:
+            print("กรุณาใส่ตัวเลขเท่านั้น")
 
 def check_guess(secret_number, player_guess):
     """
@@ -23,16 +31,13 @@ def check_guess(secret_number, player_guess):
     4. If the guess is too low, return the string "low".
     """
     # Student 2: Add your code here
-def check_guess(player_guess, secret_number):
+def check_guess(secret_number, player_guess):
     if player_guess < secret_number:
-        print("ต่ำไป")
-        return False
+        return "low"
     elif player_guess > secret_number:
-        print("สูงไป")
-        return False
+        return "high"
     else:
-        print("ถูกต้อง!")
-        return True
+        return "correct"
 
 def play_game():
     """
